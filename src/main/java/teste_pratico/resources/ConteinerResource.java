@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import teste_pratico.domain.Conteiner;
+import teste_pratico.domain.enums.Categoria;
+import teste_pratico.domain.enums.StatusEspacoInterior;
+import teste_pratico.domain.enums.TipoConteiner;
 import teste_pratico.repositories.ConteinerRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -68,4 +71,19 @@ public class ConteinerResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@RequestMapping(value = "/tipos_conteiner", method = RequestMethod.GET)
+	public ResponseEntity<TipoConteiner[]> getTiposConteiner() {
+		
+		return ResponseEntity.ok().body(TipoConteiner.values());
+	}
+	
+	@RequestMapping(value = "/status", method = RequestMethod.GET)
+	public ResponseEntity<StatusEspacoInterior[]> getStatusEspacoInterior() {
+		return ResponseEntity.ok().body(StatusEspacoInterior.values());
+	}
+	
+	@RequestMapping(value = "/categorias", method = RequestMethod.GET)
+	public ResponseEntity<Categoria[]> getCategorias() {
+		return ResponseEntity.ok().body(Categoria.values());
+	}
 }

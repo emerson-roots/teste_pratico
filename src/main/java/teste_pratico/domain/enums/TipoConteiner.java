@@ -1,12 +1,11 @@
 package teste_pratico.domain.enums;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum TipoConteiner {
-
-	PES_20(20, "20 Pes"),
-	PES_40(40, "40 Pes");
+	
+	PES_20(20, "20 Pés"),
+	PES_40(40, "40 Pés");
 	
 	private int cod;
 	private String descricao;
@@ -15,16 +14,17 @@ public enum TipoConteiner {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
-
+	
+	
 	public int getCod() {
 		return cod;
 	}
-
+	
+	@JsonValue
 	public String getDescricao() {
 		return descricao;
 	}
 	
-	@JsonCreator(mode = Mode.DELEGATING)
 	public static TipoConteiner toEnum(Integer cod) {
 		
 		if(cod == null) {

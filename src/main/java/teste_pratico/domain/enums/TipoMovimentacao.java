@@ -1,7 +1,7 @@
 package teste_pratico.domain.enums;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 
 public enum TipoMovimentacao {
 
@@ -21,16 +21,16 @@ public enum TipoMovimentacao {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
-
+	
 	public int getCod() {
 		return cod;
 	}
-
+	
+	@JsonValue
 	public String getDescricao() {
 		return descricao;
 	}
 	
-	@JsonCreator(mode = Mode.DELEGATING)
 	public static TipoMovimentacao toEnum(Integer cod) {
 		
 		if(cod == null) {

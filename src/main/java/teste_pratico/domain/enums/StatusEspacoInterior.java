@@ -1,7 +1,6 @@
 package teste_pratico.domain.enums;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum StatusEspacoInterior {
 
@@ -15,16 +14,17 @@ public enum StatusEspacoInterior {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
-
+	
+	
 	public int getCod() {
 		return cod;
 	}
-
+	
+	@JsonValue
 	public String getDescricao() {
 		return descricao;
 	}
 	
-	@JsonCreator(mode = Mode.DELEGATING)
 	public static StatusEspacoInterior toEnum(Integer cod) {
 		
 		if(cod == null) {
