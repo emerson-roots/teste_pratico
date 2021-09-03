@@ -2,6 +2,7 @@ package teste_pratico.resources;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -85,5 +86,10 @@ public class ConteinerResource {
 	@RequestMapping(value = "/categorias", method = RequestMethod.GET)
 	public ResponseEntity<Categoria[]> getCategorias() {
 		return ResponseEntity.ok().body(Categoria.values());
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Optional<Conteiner>> findById(@PathVariable Long id){
+		return ResponseEntity.ok().body(repo.findById(id));
 	}
 }
