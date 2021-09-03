@@ -3,11 +3,13 @@ package teste_pratico.resources;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +19,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import teste_pratico.domain.MovimentacaoConteiner;
 import teste_pratico.domain.enums.Categoria;
+import teste_pratico.domain.enums.TipoMovimentacao;
 import teste_pratico.repositories.MovimentacaoConteinerRepository;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/movimentacao_conteiners")
 public class MovimentacaoConteinerResource {
@@ -87,5 +91,16 @@ public class MovimentacaoConteinerResource {
 
 		return ResponseEntity.ok().body(relatorio);
 	}
+	
+	@RequestMapping(value = "/tipo_movimentacoes", method = RequestMethod.GET)
+	public ResponseEntity<TipoMovimentacao[]> getCategorias() {
+		return ResponseEntity.ok().body(TipoMovimentacao.values());
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Optional<MovimentacaoConteiner>> findById(@PathVariable Long id){
+		return ResponseEntity.ok().body(repo.findById(id));
+	}
+	
 	
 }
