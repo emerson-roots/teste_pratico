@@ -61,35 +61,9 @@ public class MovimentacaoConteinerResource {
 	}
 	
 	@RequestMapping(value = "/relatorio", method = RequestMethod.GET)
-	public ResponseEntity<List<String>> relatorio() {
-		
-		
-		
-		List<MovimentacaoConteiner> list = repo.findAllByOrderByConteinerIdDesc();
-		List<String> relatorio = new ArrayList<>();
-
-		int contadorExportacao = 0;
-		int contadorImportacao = 0;
-
-		relatorio.add("=== RELATÓRIO DE MOVIMENTAÇÕES ORDENADO POR CLIENTE ===");
-		for (int i = 0; i < list.size(); i++) {
-
-			MovimentacaoConteiner newObj = list.get(i);
-			relatorio.add("Cliente: " + newObj.getConteiner().getCliente() + " | Tipo Movimentação: " + newObj.getTipoMovimentacao());
-
-			if (newObj.getConteiner().getCategoria().equals(Categoria.IMPORTACAO)) {
-				contadorImportacao++;
-			} else if (newObj.getConteiner().getCategoria().equals(Categoria.EXPORTACAO)) {
-				contadorExportacao++;
-			}
-
-		}
-		
-		relatorio.add("                                                ");
-		relatorio.add("=================== SUMÁRIO  ===================");
-		relatorio.add("Movimentações: " + list.size() + " | Importações: " + contadorImportacao + " | Exportações: " + contadorExportacao);
-
-		return ResponseEntity.ok().body(relatorio);
+	public ResponseEntity<List<MovimentacaoConteiner>> relatorio() {
+				List<MovimentacaoConteiner> list = repo.findAllByOrderByConteinerIdAsc();
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@RequestMapping(value = "/tipo_movimentacoes", method = RequestMethod.GET)

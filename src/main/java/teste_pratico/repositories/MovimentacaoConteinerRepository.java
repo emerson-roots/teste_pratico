@@ -12,6 +12,6 @@ public interface MovimentacaoConteinerRepository extends JpaRepository<Movimenta
 
 	// namespaces conforme documentação
 	// fonte: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
-	List<MovimentacaoConteiner> findAllByOrderByConteinerIdDesc();
+	List<MovimentacaoConteiner> findAllByOrderByConteinerIdAsc();
 
 }
