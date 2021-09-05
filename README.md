@@ -1,31 +1,61 @@
-# Teste prático para PROCESSO SELETIVO (gravando o desenvovlvimento, a tela do computador e publicar no YouTube [Confira aqui](https://www.youtube.com/watch?v=wE7Sf1wbbSI/ "https://www.youtube.com/watch?v=wE7Sf1wbbSI")).
+# Sobre o projeto:
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/emerson-roots/teste_pratico/blob/master/LICENSE) 
 
-## Este repositório contém o desenvolvimento de uma aplicação web (no formato API Rest) para participar de um processo seletivo.
-
-### Os requisitos de projeto para seleção foram;
-
-- vídeo de 1 hora de duração sem cortes (gravação de tela do computador - Assista o video YouTube [AQUI](https://www.youtube.com/watch?v=wE7Sf1wbbSI/ "https://www.youtube.com/watch?v=wE7Sf1wbbSI"))
-- explicar passo a passo o que está fazendo durante o desenvolvimento utilizando microfone
-- entregar pelo menos uma versão parcial porém funcional
-- aplicação web
-- banco de dados estruturado
-- livre escolha da tecnologia a ser utilizada
-- crud Conteiner
-- o atributo Codigo do Conteiner deve respeitar o padrão 4 letras 7 números. (EX.: TEST1234567)
-- crud Movimentações de Conteiner
-- validações gerais
-- gerar relatório
-- gerar sumário
-- versionar o código-fonte no Github
+![NPM](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)
+![NPM](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) 
+![NPM](https://img.shields.io/badge/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white) 
+![NPM](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) 
+![NPM](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) 
+![NPM](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white) 
+![NPM](https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=spring&logoColor=white)
 
 
-### A tecnologia utilizada;
-- Java 11
-- Spring Framework (versão 2.5.4)
-- Banco de dados H2
-- JPA/Hibernate
-- Maven
+Link YouTube para video demonstração do projeto **FINALIZADO**; 
+- https://youtu.be/DRtIStmbnJE
+
+Link YouTube demonstrando parte do processo de desenvolvimento BACKEND (Requisito: 1 hora de video); 
+- https://youtu.be/wE7Sf1wbbSI
+
+
+## Teste prático desenvolvendo um CRUD para participar de processo seletivo.
+### Os requisitos são;
+
+
+Crud de Contêiner
+- Cliente
+- Número do contêiner (4 letras e 7 números. Ex: TEST1234567)
+- Tipo: 20 / 40
+- Status: Cheio / Vazio
+- Categoria: Importação / Exportação
+
+Crud de Movimentações
+- Tipo de Movimentação (Embarque, Descarga, Gate In, Gate out, Posicionamento
+Pilha, Pesagem, Scanner)
+- Data e Hora do Início
+- Data e Hora do Fim
+
+Gerar um relatório com o total de movimentações agrupadas por cliente e tipo de
+movimentação.
+
+No final do relatório deverá conter um sumário com o total de importação / exportação.
+
+# 🛠 Skills utilizadas
+	
+### FRONTEND 
+
+- (Link do repositório: https://github.com/emerson-roots/teste_pratico_frontend)
+-	Angular 12
+-	Node.js
+-	HTML/CSS
+-	Bootstrap 4
+
+### BACKEND
+-	Java 11
+-	Padrão API Rest
+-	Spring Boot
+-	JPA/Hibernate
+-	Maven
+-	Banco de dados H2 (banco em memória)
 
 # Como executar o projeto LOCALMENTE
 
@@ -60,7 +90,7 @@ CTRL+C na linha de comando
 ```
 
 
-# Autor
+# 🚀 Autor
 
 *Emerson Melo de Lima*
 
